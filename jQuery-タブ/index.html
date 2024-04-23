@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>jQuery-タブ</title>
+    <link
+      rel="shortcut icon"
+      href="./img/common/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Playfair+Display:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Serif+JP:wght@400;500;700&family=Playfair+Display:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./js/bundle.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <button
+        id="humburger"
+        class="humburger"
+        type="button"
+        aria-label="メニューを開く"
+        aria-controls="spMenu"
+        aria-expanded="false"
+      >
+        <span class="humburger__line" aria-hidden="true"></span>
+      </button>
+      <nav
+        id="spMenu"
+        class="sp-menu"
+        aria-label="スマホ用メニュー"
+        aria-hidden="true"
+      >
+        <div class="sp-menu__wrapper">
+          <div class="sp-menu__top">
+            <ul class="sp-menu__list">
+              <li class="sp-menu__item sp-menu__item--active">
+                <a href="#" aria-current="page">Top</a>
+              </li>
+              <li class="sp-menu__item">
+                <a href="#">Service</a>
+              </li>
+              <li class="sp-menu__item">
+                <a href="#">Works</a>
+              </li>
+              <li class="sp-menu__item">
+                <a href="#">About</a>
+              </li>
+              <li class="sp-menu__item">
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <!-- /.sp-menu__top -->
+        </div>
+        <!-- /.sp-menu__wrapper -->
+      </nav>
+      <div id="spMenuBg" class="sp-menu-bg"></div>
+    </header>
+    <main></main>
+  </body>
+</html>
+
+<div class="mv">
+  <div class="mv__inner">
+    <div class="mv__content">
+      <h1 class="mv__title">Portfolio</h1>
+      <p class="mv__catch">お客様のための本質的なWeb制作</p>
+    </div>
+    <!-- /.mv__content -->
+  </div>
+  <!-- /.mv__inner -->
+  <span class="mv__scroll">scroll</span>
+</div>
+<!-- /.mv -->
+
+
+<section id="trigger1" class="lead">
+  <div class="container">
+    <div class="lead__title">
+      <div class="lv2-heading">
+        <h2 class="lv2-heading__title lv2-heading__title--border-right">
+          Blog
+        </h2>
+      </div>
+    </div>
+    <div class="lead__title-text">
+      <div class="lv3-heading">
+        <h3 class="lv3-heading__title">記事一覧</h3>
+      </div>
+    </div>
+    <div class="top-blog">
+      <div class="tab">
+        <div class="tab__header">
+          <ul class="tab__btn-list" role="tablist">
+            <li class="tab__btn-item" role="presentation">
+              <button
+                class="tab__btn-btn"
+                id="tab1"
+                role="tab"
+                aria-controls="tabPanel1"
+                aria-expanded="true"
+                aria-selected="true"
+              >
+                新着
+              </button>
+            </li>
+            <li class="tab__btn-item" role="presentation">
+              <button
+                class="tab__btn-btn"
+                id="tab2"
+                role="tab"
+                aria-controls="tabPanel2"
+                aria-expanded="false"
+                aria-selected="false"
+              >
+                人気
+              </button>
+            </li>
+          </ul>
+        </div>
+        <!-- /.tab__header -->
+        <div class="tab__main">
+          <div
+            class="tab__panel"
+            id="tabPanel1"
+            role="tabpanel"
+            aria-labelledby="tab1"
+            aria-hidden="false"
+            tabindex="0"
+          >
+            <ul class="tab__blog-list">
+              <li class="tab__blog-item">
+                <a class="tab__blog-link" href="#">
+                  <div class="tab__blog-body">
+                    <span class="tab__blog-cat">Web制作</span>
+                    <h3 class="tab__blog-title">
+                      なぜいろいろやりたがる？まずはコーディングで経験を積んでから他のスキルに行くべき
+                    </h3>
+                  </div>
+                  <!-- /.tab__blog-body -->
+                  <figure class="tab__blog-img">
+                    <img
+                      src="../img/layout/top/top-img03.webp"
+                      alt="サムネ画像1"
+                    />
+                  </figure>
+                </a>
+              </li>
+              <li class="tab__blog-item">
+                <a class="tab__blog-link" href="#">
+                  <div class="tab__blog-body">
+                    <span class="tab__blog-cat">コーディング</span>
+                    <h3 class="tab__blog-title">
+                      なぜいろいろやりたがる？まずはコーディングで経験を積んでから他のスキルに行くべき
+                    </h3>
+                  </div>
+                  <!-- /.tab__blog-body -->
+                  <figure class="tab__blog-img">
+                    <img
+                      src="../img/layout/top/top-img02.webp"
+                      alt="サムネ画像2"
+                    />
+                  </figure>
+                </a>
+              </li>
+              <li class="tab__blog-item">
+                <a class="tab__blog-link" href="#">
+                  <div class="tab__blog-body">
+                    <span class="tab__blog-cat">学習</span>
+                    <h3 class="tab__blog-title">
+                      なぜいろいろやりたがる？まずはコーディングで経験を積んでから他のスキルに行くべき
+                    </h3>
+                  </div>
+                  <!-- /.tab__blog-body -->
+                  <figure class="tab__blog-img">
+                    <img
+                      src="../img/layout/top/top-img01.webp"
+                      alt="サムネ画像3"
+                    />
+                  </figure>
+                </a>
+              </li>
+            </ul>
+            <!-- /.tab__content -->
+          </div>
+          <!-- /.tab__panel -->
+          <div
+            class="tab__panel"
+            id="tabPanel2"
+            role="tabpanel"
+            aria-labelledby="tab2"
+            aria-hidden="true"
+            tabindex="0"
+          >
+            <ul class="tab__blog-list">
+              <li class="tab__blog-item">
+                <a class="tab__blog-link" href="#">
+                  <div class="tab__blog-body">
+                    <span class="tab__blog-cat">Web制作</span>
+                    <h3 class="tab__blog-title">
+                      なぜいろいろやりたがる？まずはコーディングで経験を積んでから他のスキルに行くべき
+                    </h3>
+                  </div>
+                  <!-- /.tab__blog-body -->
+                  <figure class="tab__blog-img">
+                    <img
+                      src="../img/layout/top/top-img04.webp"
+                      alt="サムネ画像4"
+                    />
+                  </figure>
+                </a>
+              </li>
+              <li class="tab__blog-item">
+                <a class="tab__blog-link" href="#">
+                  <div class="tab__blog-body">
+                    <span class="tab__blog-cat">コーディング</span>
+                    <h3 class="tab__blog-title">
+                      なぜいろいろやりたがる？まずはコーディングで経験を積んでから他のスキルに行くべき
+                    </h3>
+                  </div>
+                  <!-- /.tab__blog-body -->
+                  <figure class="tab__blog-img">
+                    <img
+                      src="../img/layout/top/top-img05.webp"
+                      alt="サムネ画像5"
+                    />
+                  </figure>
+                </a>
+              </li>
+              <li class="tab__blog-item">
+                <a class="tab__blog-link" href="#">
+                  <div class="tab__blog-body">
+                    <span class="tab__blog-cat">学習</span>
+                    <h3 class="tab__blog-title">
+                      なぜいろいろやりたがる？まずはコーディングで経験を積んでから他のスキルに行くべき
+                    </h3>
+                  </div>
+                  <!-- /.tab__blog-body -->
+                  <figure class="tab__blog-img">
+                    <img
+                      src="../img/layout/top/top-img06.webp"
+                      alt="サムネ画像6"
+                    />
+                  </figure>
+                </a>
+              </li>
+            </ul>
+            <!-- /.tab__content -->
+          </div>
+          <!-- /.tab__panel -->
+        </div>
+        <!-- /.tab__main -->
+      </div>
+      <!-- /.tab -->
+    </div>
+    <!-- /.top-blog -->
+  </div>
+  <!-- /.container -->
+</section>
+
+    </main>
+    <footer id="trigger3" class="footer">
+      <small class="footer__copy"
+        >Copyright &copy; 2024 pf All Rights Reserved.</small
+      >
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>jQuery-スムーススクロール</title>
+    <link
+      rel="shortcut icon"
+      href="./img/common/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Playfair+Display:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Serif+JP:wght@400;500;700&family=Playfair+Display:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./js/bundle.js"></script>
+  </head>
+  <body>
+    <span id="scrollBtn" class="scroll-btn"><span class="scroll-btn__text">TOP</span></span>
+    <header class="header">
+      <button
+        id="humburger"
+        class="humburger"
+        type="button"
+        aria-label="メニューを開く"
+        aria-controls="spMenu"
+        aria-expanded="false"
+      >
+        <span class="humburger__line" aria-hidden="true"></span>
+      </button>
+      <nav
+        id="spMenu"
+        class="sp-menu"
+        aria-label="スマホ用メニュー"
+        aria-hidden="true"
+      >
+        <div class="sp-menu__wrapper">
+          <div class="sp-menu__top">
+            <ul class="sp-menu__list">
+              <li class="sp-menu__item sp-menu__item--active">
+                <a href="#" aria-current="page">Top</a>
+              </li>
+              <li class="sp-menu__item">
+                <a href="#trigger1">Comment</a>
+              </li>
+              <li class="sp-menu__item">
+                <a href="#trigger2">Skils</a>
+              </li>
+              <li class="sp-menu__item">
+                <a href="#works">Works</a>
+              </li>
+            </ul>
+          </div>
+          <!-- /.sp-menu__top -->
+        </div>
+        <!-- /.sp-menu__wrapper -->
+      </nav>
+      <div id="spMenuBg" class="sp-menu-bg"></div>
+    </header>
+    <main></main>
+  </body>
+</html>
+
+<div class="mv">
+  <div class="mv__inner">
+    <div class="mv__content">
+      <h1 class="mv__title">Portfolio</h1>
+      <p class="mv__catch">お客様のための本質的なWeb制作</p>
+    </div>
+    <!-- /.mv__content -->
+  </div>
+  <!-- /.mv__inner -->
+  <span class="mv__scroll">scroll</span>
+</div>
+<!-- /.mv -->
+
+
+<section id="trigger1" class="lead">
+  <div class="container">
+    <div class="lead__title">
+      <div class="lv2-heading">
+        <h2 class="lv2-heading__title lv2-heading__title--border-right">
+          Comment
+        </h2>
+      </div>
+    </div>
+    <div class="lead__title-text">
+      <div class="lv3-heading">
+        <h3 class="lv3-heading__title">
+          心がけているのは<br class="sm-only" />「お客様のため」のWeb制作です。
+        </h3>
+      </div>
+    </div>
+    <div class="lead__body">
+      <p class="lead__text">Webサイトは集客し、売上を出すためのツール。</p>
+      <p class="lead__text">
+        コーダーは「デザインカンプを忠実に再現するもの」ですが、Webサイトの本質は集客です。<br>ですので、私からも意見や疑問点は積極的に発言させていただきたいと思っております。
+      </p>
+      <p class="lead__text">
+        一緒にお仕事させていただく以上、パートナーとしてより結果を残せるWebサイトを構築いたします。
+      </p>
+    </div>
+  </div>
+  <!-- /.container -->
+</section>
+<section id="trigger2" class="skills">
+  <div class="container">
+    <div class="skills__title">
+      <div class="lv2-heading">
+        <h2 class="lv2-heading__title">Skills</h2>
+        <p class="lv2-heading__text">スキルと使用ツールの一覧です。</p>
+      </div>
+    </div>
+    <div class="skills__body">
+      <ul class="grid-list">
+        <li class="grid-list__item grid">
+          <div class="grid__content">
+            <div class="grid__body">
+              <h3 class="grid__title">HTML</h3>
+              <p class="grid__text">
+                適切なタグ、WAI-ARIAを用いてアクセシビリティを考慮したマークアップを意識しています。
+              </p>
+            </div>
+            <figure class="grid__img">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+              />
+            </figure>
+          </div>
+          <!-- /.grid-list__content -->
+        </li>
+        <li class="grid-list__item grid">
+          <div class="grid__content">
+            <div class="grid__body">
+              <h3 class="grid__title">CSS</h3>
+              <p class="grid__text">
+                「良いCSS」に基づき命名規則(BEM)を用いたCSS設計で、運用しやすいサイトを構築します。
+              </p>
+            </div>
+            <figure class="grid__img">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+              />
+            </figure>
+          </div>
+          <!-- /.grid-list__content -->
+        </li>
+        <li class="grid-list__item grid">
+          <div class="grid__content">
+            <div class="grid__body">
+              <h3 class="grid__title">Saas</h3>
+              <p class="grid__text">
+                Sassの機能である変数やmixinを利用することで、効率的にコーディングしています。
+              </p>
+            </div>
+            <figure class="grid__img">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
+              />
+            </figure>
+          </div>
+          <!-- /.grid-list__content -->
+        </li>
+        <li class="grid-list__item grid">
+          <div class="grid__content">
+            <div class="grid__body">
+              <h3 class="grid__title">JavaScript</h3>
+              <p class="grid__text">
+                ハンバーガーメニューやスクロールバーなどよくあるアニメーションの実装が可能です。
+              </p>
+            </div>
+            <figure class="grid__img">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+              />
+            </figure>
+          </div>
+          <!-- /.grid-list__content -->
+        </li>
+        <li class="grid-list__item grid">
+          <div class="grid__content">
+            <div class="grid__body">
+              <h3 class="grid__title">jQuery</h3>
+              <p class="grid__text">
+                ハンバーガーメニューやスクロールバーなどよくあるアニメーションの実装が可能です。
+              </p>
+            </div>
+            <figure class="grid__img">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-plain.svg"
+              />
+            </figure>
+          </div>
+          <!-- /.grid-list__content -->
+        </li>
+        <li class="grid-list__item grid">
+          <div class="grid__content">
+            <div class="grid__body">
+              <h3 class="grid__title">PHP</h3>
+              <p class="grid__text">
+                静的サイトをWordPress化するときに用います。
+              </p>
+            </div>
+            <figure class="grid__img">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+              />
+            </figure>
+          </div>
+          <!-- /.grid-list__content -->
+        </li>
+        <li class="grid-list__item grid">
+          <div class="grid__content">
+            <div class="grid__body">
+              <h3 class="grid__title">WordPress</h3>
+              <p class="grid__text">
+                WordPressのテンプレートタグ、プラグインを用いて静的サイトをWordPress化します。
+              </p>
+            </div>
+            <figure class="grid__img">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg"
+              />
+            </figure>
+          </div>
+          <!-- /.grid-list__content -->
+        </li>
+        <li class="grid-list__item grid">
+          <div class="grid__content">
+            <div class="grid__body">
+              <h3 class="grid__title">Gulp</h3>
+              <p class="grid__text">
+                画像、ファイルの圧縮・コンパイルを自動化しているため、効率的にコーディングできます。
+              </p>
+            </div>
+            <figure class="grid__img">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gulp/gulp-plain.svg"
+              />
+            </figure>
+          </div>
+          <!-- /.grid-list__content -->
+        </li>
+        <li class="grid-list__item grid">
+          <div class="grid__content">
+            <div class="grid__body">
+              <h3 class="grid__title">Git</h3>
+              <p class="grid__text">
+                個人のフォルダをGitで管理しています。Gitの概念を理解しているので共同開発も可能です。
+              </p>
+            </div>
+            <figure class="grid__img">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+              />
+            </figure>
+          </div>
+          <!-- /.grid-list__content -->
+        </li>
+      </ul>
+      <p class="skills__note-text">※レスポンシブ対応可能です</p>
+    </div>
+  </div>
+  <!-- /.container -->
+</section>
+<section id="works" class="works">
+  <div class="container">
+    <div class="works__title">
+      <div class="lv2-heading">
+        <h2 class="lv2-heading__title">Works</h2>
+        <p class="lv2-heading__text">これまでの実績一覧です。</p>
+      </div>
+    </div>
+    <div class="works__body">
+      <div class="swiper swiper-works1">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide">
+            <a href="#" class="card">
+              <div class="card__body">
+                <p class="card__title">HTML/CSS/jQuery/Gulp/Git</p>
+                <p class="card__text">Figmaからのコーディング</p>
+              </div>
+              <figure class="card__img">
+                <img src="./img/layout/top/top-img01.webp" alt="" />
+              </figure>
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="#" class="card">
+              <div class="card__body">
+                <p class="card__title">HTML/CSS/jQuery/WordPress/Git</p>
+                <p class="card__text">XDからのコーディング</p>
+              </div>
+              <figure class="card__img">
+                <img src="./img/layout/top/top-img02.webp" alt="" />
+              </figure>
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="#" class="card">
+              <div class="card__body">
+                <p class="card__title">HTML/CSS/jQuery/Git</p>
+                <p class="card__text">Photoshopからのコーディング</p>
+              </div>
+              <figure class="card__img">
+                <img src="./img/layout/top/top-img03.webp" alt="" />
+              </figure>
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="#" class="card">
+              <div class="card__body">
+                <p class="card__title">HTML/CSS/jQuery/Git</p>
+                <p class="card__text">XDからのコーディング</p>
+              </div>
+              <figure class="card__img">
+                <img src="./img/layout/top/top-img04.webp" alt="" />
+              </figure>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.swiper -->
+      <div class="swiper swiper-works2">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide">
+            <a href="#" class="card">
+              <div class="card__body">
+                <p class="card__title">HTML/CSS/jQuery/Gulp/Git</p>
+                <p class="card__text">Figmaからのコーディング</p>
+              </div>
+              <figure class="card__img">
+                <img src="./img/layout/top/top-img07.webp" alt="" />
+              </figure>
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="#" class="card">
+              <div class="card__body">
+                <p class="card__title">HTML/CSS/jQuery/WordPress/Git</p>
+                <p class="card__text">XDからのコーディング</p>
+              </div>
+              <figure class="card__img">
+                <img src="./img/layout/top/top-img08.webp" alt="" />
+              </figure>
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="#" class="card">
+              <div class="card__body">
+                <p class="card__title">HTML/CSS/jQuery/Git</p>
+                <p class="card__text">Photoshopからのコーディング</p>
+              </div>
+              <figure class="card__img">
+                <img src="./img/layout/top/top-img09.webp" alt="" />
+              </figure>
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="#" class="card">
+              <div class="card__body">
+                <p class="card__title">HTML/CSS/jQuery/Git</p>
+                <p class="card__text">XDからのコーディング</p>
+              </div>
+              <figure class="card__img">
+                <img src="./img/layout/top/top-img10.webp" alt="" />
+              </figure>
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="#" class="card">
+              <div class="card__body">
+                <p class="card__title">HTML/CSS/jQuery/Git</p>
+                <p class="card__text">XDからのコーディング</p>
+              </div>
+              <figure class="card__img">
+                <img src="./img/layout/top/top-img11.webp" alt="" />
+              </figure>
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="#" class="card">
+              <div class="card__body">
+                <p class="card__title">HTML/CSS/jQuery/Git</p>
+                <p class="card__text">XDからのコーディング</p>
+              </div>
+              <figure class="card__img">
+                <img src="./img/layout/top/top-img12.webp" alt="" />
+              </figure>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.swiper -->
+      <div class="works__btn-wrapper">
+        <a href="#" class="arrow-right-btn">VIEW MORE</a>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</section>
+
+    </main>
+    <footer id="trigger3" class="footer">
+      <small class="footer__copy"
+        >Copyright &copy; 2024 pf All Rights Reserved.</small
+      >
+    </footer>
+  </body>
+</html>
